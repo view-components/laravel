@@ -1,0 +1,47 @@
+{
+    "name": "nayjest/laravel-view-components",
+    "description": "View Components for Laravel",
+    "keywords": [
+        "laravel",
+        "laravel-5",
+        "laravel5"
+    ],
+    "homepage": "https://github.com/Nayjest/LaravelViewComponents",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitalii [Nayjest] Stepanenko",
+            "email": "mail@vitaliy.in",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "nayjest/view-components": "dev-master@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.6.*",
+        "filp/whoops": "~1",
+        "codeception/codeception": "2.0.*",
+        "vlucas/phpdotenv" : "~1",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nayjest\\LaravelViewComponents\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nayjest\\LaravelViewComponents\\Test\\": "tests/phpunit",
+            "Nayjest\\LaravelViewComponents\\Demo\\": "tests/webapp"
+        }
+    },
+    "support": {
+        "email": "mail@vitaliy.in",
+        "source": "https://github.com/Nayjest/LaravelViewComponents",
+        "issues": "https://github.com/Nayjest/LaravelViewComponents/issues"
+    },
+    "minimum-stability": "dev"
+}
