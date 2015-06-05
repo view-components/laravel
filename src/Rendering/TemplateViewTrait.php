@@ -32,7 +32,10 @@ trait TemplateViewTrait
     {
         return $this->getViewFactory()->make(
             $this->resolveTemplate(),
-            $this->getViewData()
+            array_merge(
+                ['component' => $this],
+                $this->getViewData()
+            )
         )->render();
     }
 }
