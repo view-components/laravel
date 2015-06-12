@@ -12,12 +12,16 @@ class EloquentProcessorResolver extends ProcessorResolver
     {
         $ns = 'Nayjest\LaravelViewComponents\Data\Processors\Eloquent';
         $this->register(
-            'Nayjest\ViewComponents\Data\Operations\Sorting',
-            "$ns\\SortingProcessor"
+            'Nayjest\ViewComponents\Data\Operations\SortOperation',
+            "$ns\\SortProcessor"
         );
         $this->register(
-            'Nayjest\ViewComponents\Data\Operations\Filter',
+            'Nayjest\ViewComponents\Data\Operations\FilterOperation',
             "$ns\\FilterProcessor"
+        );
+        $this->register(
+            'Nayjest\ViewComponents\Data\Operations\PaginateOperation',
+            "$ns\\PaginateProcessor"
         );
     }
 }

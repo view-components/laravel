@@ -9,7 +9,6 @@ use Nayjest\ViewComponents\Data\Operations\OperationInterface;
 
 class EloquentDataProvider extends AbstractDataProvider
 {
-
     /**
      *
      * @param Builder $src
@@ -18,10 +17,13 @@ class EloquentDataProvider extends AbstractDataProvider
     public function __construct(Builder $src, array $operations = [])
     {
         $this->operations()->set($operations);
-        $this->processingManager = new EloquentProcessingManager(
-            App::make('Nayjest\LaravelViewComponents\Data\EloquentProcessorResolver'),
-            $this->operations(),
-            $src
+        $this->processingService = App::make(
+            '\Nayjest\LaravelViewComponents\Data\EloquentProcessingService',
+            [
+                App::make('Nayjest\LaravelViewComponents\Data\EloquentProcessorResolver'),
+                $this->operations(),
+                $src
+            ]
         );
     }
 }

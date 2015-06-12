@@ -3,7 +3,7 @@
 namespace Nayjest\LaravelViewComponents\Data;
 
 use Illuminate\Database\Eloquent\Builder;
-use Nayjest\ViewComponents\Data\AbstractProcessingManager;
+use Nayjest\ViewComponents\Data\ProcessingServices\AbstractProcessingService;
 use Traversable;
 
 /**
@@ -11,7 +11,7 @@ use Traversable;
  *
  * @package Nayjest\ViewComponents\Data
  */
-class EloquentProcessingManager extends AbstractProcessingManager
+class EloquentProcessingService extends AbstractProcessingService
 {
     /**
      * @param Builder $data
@@ -28,6 +28,16 @@ class EloquentProcessingManager extends AbstractProcessingManager
      */
     protected function beforeOperations($data)
     {
-        return $data;
+        return clone $data;
+    }
+
+    /**
+     * @return int
+     */
+    public function count()
+    {
+        return $this->applyOperations(
+            $this->beforeOperations($this->dataSource)
+        )->count();
     }
 }
