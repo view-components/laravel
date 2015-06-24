@@ -18,7 +18,9 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "nayjest/view-components": "dev-master@dev"
+        "nayjest/view-components": "dev-master@dev",
+        "illuminate/support":"*",
+        "illuminate/foundation":"*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.6.*",
