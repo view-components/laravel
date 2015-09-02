@@ -1,12 +1,12 @@
 {
-    "name": "nayjest/laravel-view-components",
-    "description": "View Components for Laravel",
+    "name": "presentation/laravel",
+    "description": "Laravel 4 & 5 Presentation Framework Integration",
     "keywords": [
         "laravel",
         "laravel-5",
         "laravel5"
     ],
-    "homepage": "https://github.com/Nayjest/LaravelViewComponents",
+    "homepage": "https://github.com/presentation-framework/laravel",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "nayjest/view-components": "dev-master@dev",
+        "presentation/framework": ">=0.5",
         "illuminate/support":"*",
         "illuminate/foundation":"*"
     },
@@ -42,8 +42,8 @@
     },
     "support": {
         "email": "mail@vitaliy.in",
-        "source": "https://github.com/Nayjest/LaravelViewComponents",
-        "issues": "https://github.com/Nayjest/LaravelViewComponents/issues"
+        "source": "https://github.com/presentation-framework/laravel",
+        "issues": "https://github.com/presentation-framework/laravel/issues"
     },
     "minimum-stability": "dev"
 }
