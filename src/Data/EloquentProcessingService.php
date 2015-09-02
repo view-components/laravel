@@ -1,6 +1,6 @@
 <?php
 
-namespace Presentation\Larvel\Data;
+namespace Presentation\Laravel\Data;
 
 use Illuminate\Database\Eloquent\Builder;
 use Presentation\Framework\Data\ProcessingService\AbstractProcessingService;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Presentation\Larvel\Data;
+namespace Presentation\Laravel\Data;
 
 use App;
 use Illuminate\Database\Eloquent\Builder;

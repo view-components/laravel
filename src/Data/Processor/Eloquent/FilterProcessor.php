@@ -1,6 +1,6 @@
 <?php
 
-namespace Presentation\Larvel\Data\Processor\Eloquent;
+namespace Presentation\Laravel\Data\Processor\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder;
 use Presentation\Framework\Data\Operation\FilterOperation;
