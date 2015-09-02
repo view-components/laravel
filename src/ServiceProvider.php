@@ -1,8 +1,12 @@
-<?php namespace Nayjest\LaravelViewComponents;
+<?php
+
+namespace Presentation\Laravel;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Nayjest\ViewComponents\Resources\Resources;
+use Presentation\Framework\Resource\AliasRegistry;
+use Presentation\Framework\Resource\IncludedResourcesRegistry;
+use Presentation\Framework\Resource\ResourceManager;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -29,37 +33,37 @@ class ServiceProvider extends BaseServiceProvider
 
         # only for Laravel 4 & some of 5-dev
         if (version_compare(Application::VERSION, '5.0.0', '<')) {
-            $this->package('nayjest/laravel-view-components');
+            $this->package('presentation/laravel');
             $this->app['view']->addNamespace(
-                'laravel-view-components',
+                'presentation',
                 $views_path
             );
         } else {
-            $this->loadViewsFrom($views_path, 'laravel-view-components');
-            $this->loadTranslationsFrom($pkg_path . '/resources/lang', 'grids');
+            $this->loadViewsFrom($views_path, 'presentation');
+            $this->loadTranslationsFrom($pkg_path . '/resources/lang', 'presentation');
             $this->publishes([
-                $views_path => base_path('resources/views/nayjest/laravel-view-components')
+                $views_path => base_path('resources/views/presentation/laravel')
             ]);
         }
     }
 
     protected function addBindings()
     {
-        $this->app->singleton('js_registry', 'Nayjest\ViewComponents\Resources\AliasRegistry');
-        $this->app->singleton('css_registry', 'Nayjest\ViewComponents\Resources\AliasRegistry');
+        $this->app->singleton('js_registry', AliasRegistry::class);
+        $this->app->singleton('css_registry', AliasRegistry::class);
         $this->app->singleton(
-            'Nayjest\ViewComponents\Resources\Resources',
+            ResourceManager::class,
             function() {
-                return new Resources(
+                return new ResourceManager(
                     $this->app->make('js_registry'),
                     $this->app->make('css_registry'),
                     $this->app->make(
-                        'Nayjest\ViewComponents\Resources\IncludedResourcesRegistry'
+                        IncludedResourcesRegistry::class
                     )
                 );
             }
         );
-        $this->app->singleton('resources_registry', 'Nayjest\ViewComponents\Resources\Resources');
+        $this->app->singleton('resource_manager', ResourceManager::class);
     }
 
     /**
@@ -79,6 +83,6 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function provides()
     {
-        return ['js_registry', 'css_registry', 'resources_registry'];
+        return ['js_registry', 'css_registry', 'resource_manager'];
     }
 }

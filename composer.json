@@ -18,9 +18,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "presentation/framework": ">=0.5",
-        "illuminate/support":"*",
-        "illuminate/foundation":"*"
+        "presentation/framework": ">=0.7",
+        "laravel/framework":"*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.6.*",
@@ -31,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Nayjest\\LaravelViewComponents\\": "src/"
+            "Presentation\\Laravel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Nayjest\\LaravelViewComponents\\Test\\": "tests/phpunit",
-            "Nayjest\\LaravelViewComponents\\Demo\\": "tests/webapp"
+            "Presentation\\Laravel\\Test\\": "tests/phpunit",
+            "Presentation\\Laravel\\Demo\\": "tests/webapp"
         }
     },
     "support": {
