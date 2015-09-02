@@ -16,11 +16,12 @@ class PaginationControl extends BasePaginationControl
                 $this->dataProvider,
                 $this->getTotalRecordsCount(),
                 $this->recordsPerPage,
-                $this->getCurrentPage(),
+                (int)$this->pageInputOption->getValue(),
                 [
                     'path' => LengthAwarePaginator::resolveCurrentPath()
                 ]
             );
+            $paginator->setPageName($this->pageInputOption->getKey());
             return $paginator->render();
         });
     }
