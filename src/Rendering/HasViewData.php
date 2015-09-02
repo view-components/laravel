@@ -1,6 +1,6 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Rendering;
+namespace Presentation\Laravel\Rendering;
 
 trait HasViewData
 {

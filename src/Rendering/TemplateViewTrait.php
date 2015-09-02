@@ -1,9 +1,10 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Rendering;
+namespace Presentation\Laravel\Rendering;
 
 use App;
-use Nayjest\ViewComponents\Rendering\HasTemplateTrait;
+use Presentation\Framework\Rendering\HasTemplateTrait;
+
 
 /**
  * Trait TemplateViewTrait
