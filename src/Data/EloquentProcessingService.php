@@ -1,9 +1,9 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Data;
+namespace Presentation\Larvel\Data;
 
 use Illuminate\Database\Eloquent\Builder;
-use Nayjest\ViewComponents\Data\ProcessingServices\AbstractProcessingService;
+use Presentation\Framework\Data\ProcessingService\AbstractProcessingService;
 use Traversable;
 
 /**

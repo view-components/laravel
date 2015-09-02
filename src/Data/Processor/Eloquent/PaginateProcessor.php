@@ -1,11 +1,11 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Data\Processors\Eloquent;
+namespace Presentation\Larvel\Data\Processor\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder;
-use Nayjest\ViewComponents\Data\Operations\OperationInterface;
-use Nayjest\ViewComponents\Data\Operations\PaginateOperation;
-use Nayjest\ViewComponents\Data\Processors\AbstractPaginateProcessor;
+use Presentation\Framework\Data\Operation\OperationInterface;
+use Presentation\Framework\Data\Operation\PaginateOperation;
+use Presentation\Framework\Data\Processor\AbstractPaginateProcessor;
 
 class PaginateProcessor extends AbstractPaginateProcessor
 {

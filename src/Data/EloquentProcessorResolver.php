@@ -1,27 +1,23 @@
 <?php
-namespace Nayjest\LaravelViewComponents\Data;
 
-use Nayjest\ViewComponents\Data\Operations\OperationInterface;
-use Nayjest\ViewComponents\Data\ProcessorResolverInterface;
-use Nayjest\ViewComponents\Data\ProcessorResolvers\ProcessorResolver;
-use Nayjest\ViewComponents\Data\Processors\ProcessorInterface;
+namespace Presentation\Larvel\Data;
+
+use Presentation\Framework\Data\Operation\FilterOperation;
+use Presentation\Framework\Data\Operation\PaginateOperation;
+use Presentation\Framework\Data\Operation\SortOperation;
+use Presentation\Framework\Data\ProcessorResolver\ProcessorResolver;
+use Presentation\Larvel\Data\Processor\Eloquent\FilterProcessor;
+use Presentation\Larvel\Data\Processor\Eloquent\PaginateProcessor;
+use Presentation\Larvel\Data\Processor\Eloquent\SortProcessor;
 
 class EloquentProcessorResolver extends ProcessorResolver
 {
     public function __construct()
     {
-        $ns = 'Nayjest\LaravelViewComponents\Data\Processors\Eloquent';
-        $this->register(
-            'Nayjest\ViewComponents\Data\Operations\SortOperation',
-            "$ns\\SortProcessor"
-        );
-        $this->register(
-            'Nayjest\ViewComponents\Data\Operations\FilterOperation',
-            "$ns\\FilterProcessor"
-        );
-        $this->register(
-            'Nayjest\ViewComponents\Data\Operations\PaginateOperation',
-            "$ns\\PaginateProcessor"
-        );
+        $this
+            ->register(SortOperation::class,        SortProcessor::class)
+            ->register(FilterOperation::class,      FilterProcessor::class)
+            ->register(PaginateOperation::class,    PaginateProcessor::class)
+        ;
     }
 }

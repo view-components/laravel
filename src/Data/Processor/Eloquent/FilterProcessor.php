@@ -1,11 +1,11 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Data\Processors\Eloquent;
+namespace Presentation\Larvel\Data\Processor\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder;
-use Nayjest\ViewComponents\Data\Operations\FilterOperation;
-use Nayjest\ViewComponents\Data\Operations\OperationInterface;
-use Nayjest\ViewComponents\Data\Processors\ProcessorInterface;
+use Presentation\Framework\Data\Operation\FilterOperation;
+use Presentation\Framework\Data\Operation\OperationInterface;
+use Presentation\Framework\Data\Processor\ProcessorInterface;
 
 class FilterProcessor implements ProcessorInterface
 {

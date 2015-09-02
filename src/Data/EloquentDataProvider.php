@@ -1,11 +1,11 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Data;
+namespace Presentation\Larvel\Data;
 
 use App;
 use Illuminate\Database\Eloquent\Builder;
-use Nayjest\ViewComponents\Data\AbstractDataProvider;
-use Nayjest\ViewComponents\Data\Operations\OperationInterface;
+use Presentation\Framework\Data\AbstractDataProvider;
+use Presentation\Framework\Data\Operation\OperationInterface;
 
 class EloquentDataProvider extends AbstractDataProvider
 {
@@ -18,9 +18,9 @@ class EloquentDataProvider extends AbstractDataProvider
     {
         $this->operations()->set($operations);
         $this->processingService = App::make(
-            '\Nayjest\LaravelViewComponents\Data\EloquentProcessingService',
+            EloquentProcessingService::class,
             [
-                App::make('Nayjest\LaravelViewComponents\Data\EloquentProcessorResolver'),
+                App::make(EloquentProcessorResolver::class),
                 $this->operations(),
                 $src
             ]
