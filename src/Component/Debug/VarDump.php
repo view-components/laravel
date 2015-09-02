@@ -1,10 +1,15 @@
 <?php
 
-namespace Nayjest\LaravelViewComponents\Components\Debug;
+namespace Presentation\Laravel\Component\Debug;
 
 use Illuminate\Contracts\Support\Arrayable;
-use Nayjest\ViewComponents\Components\Debug\SymfonyVarDump;
+use Presentation\Framework\Component\Debug\SymfonyVarDump;
 
+/**
+ * Class VarDump.
+ *
+ * @package Presentation\Larave\Component\Debug
+ */
 class VarDump extends SymfonyVarDump
 {
 
