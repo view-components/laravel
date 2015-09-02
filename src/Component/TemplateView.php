@@ -2,25 +2,13 @@
 
 namespace Presentation\Laravel\Component;
 
-use Nayjest\Tree\NodeTrait;
-use Presentation\Framework\Base\ComponentInterface;
-use Presentation\Framework\Base\ComponentTrait;
-use Presentation\Framework\Rendering\HasTemplateInterface;
-use Presentation\Framework\Rendering\ViewTrait;
-use Presentation\Laravel\Rendering\HasViewData;
-use Presentation\Laravel\Rendering\TemplateViewTrait;
+use Presentation\Framework\Base\AbstractTemplateView;
+use Presentation\Laravel\Rendering\Renderer;
 
-class TemplateView implements ComponentInterface, HasTemplateInterface
+class TemplateView extends AbstractTemplateView
 {
-    use NodeTrait;
-    use ViewTrait;
-    use ComponentTrait;
-    use TemplateViewTrait;
-    use HasViewData;
-
-    public function __construct($template = null, array $vars = [])
+    protected function getRenderer()
     {
-        $this->setTemplate($template);
-        $this->setViewData($vars);
+        return Renderer::getInstance();
     }
 }
