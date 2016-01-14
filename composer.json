@@ -18,15 +18,16 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "presentation/framework": "*@dev",
-        "laravel/framework":"^4|^5"
+        "presentation/framework": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.6.*",
         "filp/whoops": "~1",
         "codeception/codeception": "2.0.*",
         "vlucas/phpdotenv" : "~1",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "laravel/framework":"^4|^5",
+        "presentation/grids":"*"
     },
     "autoload": {
         "psr-4": {
