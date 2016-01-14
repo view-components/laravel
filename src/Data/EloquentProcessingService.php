@@ -2,7 +2,9 @@
 
 namespace Presentation\Laravel\Data;
 
-use Illuminate\Database\Eloquent\Builder;
+use ArrayIterator;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Query\Builder;
 use Presentation\Framework\Data\ProcessingService\AbstractProcessingService;
 use Traversable;
 
@@ -14,17 +16,22 @@ use Traversable;
 class EloquentProcessingService extends AbstractProcessingService
 {
     /**
-     * @param Builder $data
+     * @param Builder|EloquentBuilder $data
      * @return Traversable
      */
     protected function afterOperations($data)
     {
-        return $data->get();
+        if ($data instanceof EloquentBuilder) {
+            return $data->get();
+        } elseif ($data instanceof Builder) {
+            return new ArrayIterator($data->get());
+        }
+        throw new \RuntimeException('Unsupported type of data source.');
     }
 
     /**
-     * @param Builder $data
-     * @return Builder
+     * @param Builder|EloquentBuilder $data
+     * @return Builder|EloquentBuilder
      */
     protected function beforeOperations($data)
     {
