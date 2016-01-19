@@ -7,6 +7,9 @@ use Presentation\Framework\Component\Debug\SymfonyVarDump;
 
 /**
  * Class VarDump.
+ * The component displays custom data using Symfony VarDumper.
+ * VarDump class overrides SymfonyVarDump to provide better output for Laravel.
+ * It unpack's objects implementing Arrayable interface to hide not important data from dump.
  *
  * @package Presentation\Larave\Component\Debug
  */
