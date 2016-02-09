@@ -1,6 +1,8 @@
 Presentation Framework Integration with Laravel
 =====
 
+**Project status: pre-alpha, don't use it on production**
+
 ## Requirements
 
 * php 5.5+
